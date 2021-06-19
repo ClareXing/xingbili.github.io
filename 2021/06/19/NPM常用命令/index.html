@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NPM常用命令 › XINGBILI</title>
+  <meta name="author" content="邢火林">
+  
+  <meta name="description" content="备忘博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="NPM常用命令"/>
+  <meta property="og:site_name" content="XINGBILI"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="XINGBILI" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header id="header"><div class="meta inner">
+  <h1><a href="/">XINGBILI</a></h1>
+  <h2><a href="/">备忘</a></h2>
+  <nav id="main-nav">
+    <ul>
+      
+      <li><a href="/about">About</a></li>
+      
+      <li><a href="/archives">Archives</a></li>
+      
+      <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+</div>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">NPM常用命令</h1>
+  
+
+      
+        <time datetime="2021-06-19T04:03:31.000Z">2021-06-19</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>1、npm install  xxx -g 全局安装  不带 -g 局部安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：全局安装的包可以在命令行使用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">局部安装的可以通过 require 来引用模块</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果需要两者功能则需要两种方式都安装一遍，或者npm      link</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install xxx -f 强制重新安装</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-D （--save-dev） 只安装到 devDependence</span><br></pre></td></tr></table></figure>
+
+<p>2、npm config set proxy host or ipaddress 设置代理</p>
+<p>3、npm list -g  <strong>查看全局安装模块</strong></p>
+<p>4、npm list  xxx 查看 xxx 的模块的版本号</p>
+<p>5、npm uninstall xxx <strong>卸载模块</strong></p>
+<p>6、npm ls 查看 node_modules 目录下的包</p>
+<p>7、 npm update xxx <strong>更新模块</strong></p>
+<p>8、npm search xxx <strong>搜索模块</strong></p>
+<p>9、npm cache clear <strong>清空npm本地缓存</strong></p>
+<p>10、npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a> 使用淘宝镜像</p>
+
+      
+    </div>
+      
+      <footer>
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:xingbili.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2021/06/19/git-备忘/">git 备忘</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/NPM常用命令/">NPM常用命令</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/kafka基本搭建/">kafka基本搭建</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/koa快速使用/">koa快速使用</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/前端小知识/">前端小知识</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2021 邢火林
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git 备忘 › XINGBILI</title>
+  <meta name="author" content="邢火林">
+  
+  <meta name="description" content="备忘博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="git 备忘"/>
+  <meta property="og:site_name" content="XINGBILI"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="XINGBILI" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header id="header"><div class="meta inner">
+  <h1><a href="/">XINGBILI</a></h1>
+  <h2><a href="/">备忘</a></h2>
+  <nav id="main-nav">
+    <ul>
+      
+      <li><a href="/about">About</a></li>
+      
+      <li><a href="/archives">Archives</a></li>
+      
+      <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+</div>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">git 备忘</h1>
+  
+
+      
+        <time datetime="2021-06-19T15:46:25.000Z">2021-06-19</time>
+      
+    </header>
+    <div class="entry">
+      
+        <h2 id="git基础"><a href="#git基础" class="headerlink" title="git基础"></a>git基础</h2><p>通常有两种方式建立仓库</p>
+<h3 id="1、在目录中初始化仓库"><a href="#1、在目录中初始化仓库" class="headerlink" title="1、在目录中初始化仓库"></a>1、在目录中初始化仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">打开具体文件夹 执行 $ git init</span><br><span class="line">git init 文件夹内容 </span><br></pre></td></tr></table></figure>
+
+<h3 id="2、clone远程仓库"><a href="#2、clone远程仓库" class="headerlink" title="2、clone远程仓库"></a>2、clone远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行git clone -b &#x27;分支名称&#x27; 仓库地址</span><br><span class="line">添加生成公钥：ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot;  </span><br></pre></td></tr></table></figure>
+
+<h2 id="git-基本命令"><a href="#git-基本命令" class="headerlink" title="git 基本命令"></a>git 基本命令</h2><h3 id="1、撤销操作"><a href="#1、撤销操作" class="headerlink" title="1、撤销操作"></a>1、撤销操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit --amend</span> </span><br><span class="line">git commit -m &#x27;initial commit&#x27;</span><br><span class="line">git add forgotten_file</span><br><span class="line">git commit --amend  </span><br></pre></td></tr></table></figure>
+
+<h3 id="2-、取消暂存的文件"><a href="#2-、取消暂存的文件" class="headerlink" title="2 、取消暂存的文件"></a>2 、取消暂存的文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;//可以指定具体文件也可以不带 此时 代表取消全部</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、撤销对文件的修改"><a href="#3、撤销对文件的修改" class="headerlink" title="3、撤销对文件的修改"></a>3、撤销对文件的修改</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --&lt;file&gt; 对文件的本地修改将会全部撤销   //是个危险的命令</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、远程仓库的使用"><a href="#4、远程仓库的使用" class="headerlink" title="4、远程仓库的使用"></a>4、远程仓库的使用</h3><h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote </span><br><span class="line">git remote -v  </span><br></pre></td></tr></table></figure>
+
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;shortname&gt; &lt;url&gt; #添加一个新的远程Git 仓库，同时指定一个方便使用的简写</span><br><span class="line">eg：git remote add pb +地址</span><br><span class="line">git fetch pb 可以拉去 pb 仓库中有，而自己仓库中没有的信息</span><br></pre></td></tr></table></figure>
+
+<h4 id="从远程仓库中抓取与拉取"><a href="#从远程仓库中抓取与拉取" class="headerlink" title="从远程仓库中抓取与拉取"></a>从远程仓库中抓取与拉取</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch &lt;remote&gt;  # 只会将数据下载到你的本地仓库 并不会自动合并或修改#</span><br><span class="line">git pull # 会自动合并</span><br></pre></td></tr></table></figure>
+
+<h4 id="推送到远程分支"><a href="#推送到远程分支" class="headerlink" title="推送到远程分支"></a>推送到远程分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin master # 将分支推送到远程  如果远程不存在该分支，远程将会创建该分支</span><br><span class="line">                       # 当有别人推送过 该分支，推送会被拒绝，需要从新拉去合并后才能推送 -f 强制合</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看某个远程分支"><a href="#查看某个远程分支" class="headerlink" title="查看某个远程分支"></a>查看某个远程分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show origin </span><br></pre></td></tr></table></figure>
+
+<h4 id="远程仓库重命名和移除"><a href="#远程仓库重命名和移除" class="headerlink" title="远程仓库重命名和移除"></a>远程仓库重命名和移除</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote rename pb paul(origin)</span><br><span class="line">git remote remove # </span><br></pre></td></tr></table></figure>
+
+<h4 id="打标签"><a href="#打标签" class="headerlink" title="打标签"></a>打标签</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag </span><br></pre></td></tr></table></figure>
+
+<h4 id="多次commit-合并"><a href="#多次commit-合并" class="headerlink" title="多次commit 合并"></a>多次commit 合并</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~3  #最近三次提交合并</span><br><span class="line">git push origin  分支名  -f # 强制推送到远程</span><br><span class="line"></span><br><span class="line">回退多次合并</span><br><span class="line">git reflog </span><br><span class="line">git reset --hard HEAD@&#123;？&#125;回到指定的head</span><br></pre></td></tr></table></figure>
+
+<h4 id="git-删除分支和恢复"><a href="#git-删除分支和恢复" class="headerlink" title="git 删除分支和恢复"></a>git 删除分支和恢复</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除本地分支</span></span><br><span class="line">git branch -d &lt;branch_name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除远程分支</span></span><br><span class="line">git push origin --delete &lt;branch_name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复本地分支</span></span><br><span class="line">git reflog --date=iso 查看分支历史  有committ 就会有记录 获取 hash值</span><br><span class="line">git branch &lt;branch_name&gt; &lt;hash_val&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="git-指定提交应用于其它分支"><a href="#git-指定提交应用于其它分支" class="headerlink" title="git 指定提交应用于其它分支"></a>git 指定提交应用于其它分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick &lt;commitHash&gt;</span><br><span class="line">git cherry-pick A^..B 【A到B包含A】 </span><br></pre></td></tr></table></figure>
+
+<h4 id="git-回退版本到某个分支"><a href="#git-回退版本到某个分支" class="headerlink" title="git 回退版本到某个分支"></a>git 回退版本到某个分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD^ 回退到上个版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD~3 回退到前3次提交之前，以此类推，回退到n次提交之前</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard commit_id 退到/进到 指定commit的sha码</span></span><br><span class="line">强推到远程：</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin HEAD --force</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="git-fetch-与-git-pull-区别"><a href="#git-fetch-与-git-pull-区别" class="headerlink" title="git fetch 与 git pull 区别"></a>git fetch 与 git pull 区别</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull = git fetch + git merge，</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/git.jpg" alt="img"></p>
+<h4 id="git-单个文件操作"><a href="#git-单个文件操作" class="headerlink" title="git 单个文件操作"></a>git 单个文件操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty  文件名 //查看单个文件的修改历史</span><br><span class="line">git reset commitid 文件名 //指定文件回退到指定版本</span><br><span class="line">git checkout &lt;sha1-of-a-commit&gt; &lt;/path/to/your/file&gt;  撤销单个文件到某次提交</span><br><span class="line">$ git status -sb   查看修改显示</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换远程分支"><a href="#切换远程分支" class="headerlink" title="切换远程分支"></a>切换远程分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 本地分支名 origin/远程分支名</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+      
+      <footer>
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:xingbili.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2021/06/19/git-备忘/">git 备忘</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/NPM常用命令/">NPM常用命令</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/kafka基本搭建/">kafka基本搭建</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/koa快速使用/">koa快速使用</a>
+      </li>
+    
+      <li>
+        <a href="/2021/06/19/前端小知识/">前端小知识</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2021 邢火林
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+</body>
+</html>
+
