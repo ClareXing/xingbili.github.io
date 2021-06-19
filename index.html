@@ -77,6 +77,83 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-备忘" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/19/git-%E5%A4%87%E5%BF%98/" class="article-date">
+  <time class="dt-published" datetime="2021-06-19T15:46:25.000Z" itemprop="datePublished">2021-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/19/git-%E5%A4%87%E5%BF%98/">git 备忘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="git基础"><a href="#git基础" class="headerlink" title="git基础"></a>git基础</h2><p>通常有两种方式建立仓库</p>
+<h3 id="1、在目录中初始化仓库"><a href="#1、在目录中初始化仓库" class="headerlink" title="1、在目录中初始化仓库"></a>1、在目录中初始化仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">打开具体文件夹 执行 $ git init</span><br><span class="line">git init 文件夹内容 </span><br></pre></td></tr></table></figure>
+
+<h3 id="2、clone远程仓库"><a href="#2、clone远程仓库" class="headerlink" title="2、clone远程仓库"></a>2、clone远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行git clone -b &#x27;分支名称&#x27; 仓库地址</span><br><span class="line">添加生成公钥：ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot;  </span><br></pre></td></tr></table></figure>
+
+<h2 id="git-基本命令"><a href="#git-基本命令" class="headerlink" title="git 基本命令"></a>git 基本命令</h2><h3 id="1、撤销操作"><a href="#1、撤销操作" class="headerlink" title="1、撤销操作"></a>1、撤销操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit --amend</span> </span><br><span class="line">git commit -m &#x27;initial commit&#x27;</span><br><span class="line">git add forgotten_file</span><br><span class="line">git commit --amend  </span><br></pre></td></tr></table></figure>
+
+<h3 id="2-、取消暂存的文件"><a href="#2-、取消暂存的文件" class="headerlink" title="2 、取消暂存的文件"></a>2 、取消暂存的文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;//可以指定具体文件也可以不带 此时 代表取消全部</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、撤销对文件的修改"><a href="#3、撤销对文件的修改" class="headerlink" title="3、撤销对文件的修改"></a>3、撤销对文件的修改</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --&lt;file&gt; 对文件的本地修改将会全部撤销   //是个危险的命令</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、远程仓库的使用"><a href="#4、远程仓库的使用" class="headerlink" title="4、远程仓库的使用"></a>4、远程仓库的使用</h3><h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote </span><br><span class="line">git remote -v  </span><br></pre></td></tr></table></figure>
+
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;shortname&gt; &lt;url&gt; #添加一个新的远程Git 仓库，同时指定一个方便使用的简写</span><br><span class="line">eg：git remote add pb +地址</span><br><span class="line">git fetch pb 可以拉去 pb 仓库中有，而自己仓库中没有的信息</span><br></pre></td></tr></table></figure>
+
+<h4 id="从远程仓库中抓取与拉取"><a href="#从远程仓库中抓取与拉取" class="headerlink" title="从远程仓库中抓取与拉取"></a>从远程仓库中抓取与拉取</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch &lt;remote&gt;  # 只会将数据下载到你的本地仓库 并不会自动合并或修改#</span><br><span class="line">git pull # 会自动合并</span><br></pre></td></tr></table></figure>
+
+<h4 id="推送到远程分支"><a href="#推送到远程分支" class="headerlink" title="推送到远程分支"></a>推送到远程分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin master # 将分支推送到远程  如果远程不存在该分支，远程将会创建该分支</span><br><span class="line">                       # 当有别人推送过 该分支，推送会被拒绝，需要从新拉去合并后才能推送 -f 强制合</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看某个远程分支"><a href="#查看某个远程分支" class="headerlink" title="查看某个远程分支"></a>查看某个远程分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show origin </span><br></pre></td></tr></table></figure>
+
+<h4 id="远程仓库重命名和移除"><a href="#远程仓库重命名和移除" class="headerlink" title="远程仓库重命名和移除"></a>远程仓库重命名和移除</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote rename pb paul(origin)</span><br><span class="line">git remote remove # </span><br></pre></td></tr></table></figure>
+
+<h4 id="打标签"><a href="#打标签" class="headerlink" title="打标签"></a>打标签</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag </span><br></pre></td></tr></table></figure>
+
+<h4 id="多次commit-合并"><a href="#多次commit-合并" class="headerlink" title="多次commit 合并"></a>多次commit 合并</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~3  #最近三次提交合并</span><br><span class="line">git push origin  分支名  -f # 强制推送到远程</span><br><span class="line"></span><br><span class="line">回退多次合并</span><br><span class="line">git reflog </span><br><span class="line">git reset --hard HEAD@&#123;？&#125;回到指定的head</span><br></pre></td></tr></table></figure>
+
+<h4 id="git-删除分支和恢复"><a href="#git-删除分支和恢复" class="headerlink" title="git 删除分支和恢复"></a>git 删除分支和恢复</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除本地分支</span></span><br><span class="line">git branch -d &lt;branch_name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除远程分支</span></span><br><span class="line">git push origin --delete &lt;branch_name&gt;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复本地分支</span></span><br><span class="line">git reflog --date=iso 查看分支历史  有committ 就会有记录 获取 hash值</span><br><span class="line">git branch &lt;branch_name&gt; &lt;hash_val&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="git-指定提交应用于其它分支"><a href="#git-指定提交应用于其它分支" class="headerlink" title="git 指定提交应用于其它分支"></a>git 指定提交应用于其它分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick &lt;commitHash&gt;</span><br><span class="line">git cherry-pick A^..B 【A到B包含A】 </span><br></pre></td></tr></table></figure>
+
+<h4 id="git-回退版本到某个分支"><a href="#git-回退版本到某个分支" class="headerlink" title="git 回退版本到某个分支"></a>git 回退版本到某个分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD^ 回退到上个版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD~3 回退到前3次提交之前，以此类推，回退到n次提交之前</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard commit_id 退到/进到 指定commit的sha码</span></span><br><span class="line">强推到远程：</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin HEAD --force</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="git-fetch-与-git-pull-区别"><a href="#git-fetch-与-git-pull-区别" class="headerlink" title="git fetch 与 git pull 区别"></a>git fetch 与 git pull 区别</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull = git fetch + git merge，</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/git.jpg" alt="img"></p>
+<h4 id="git-单个文件操作"><a href="#git-单个文件操作" class="headerlink" title="git 单个文件操作"></a>git 单个文件操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty  文件名 //查看单个文件的修改历史</span><br><span class="line">git reset commitid 文件名 //指定文件回退到指定版本</span><br><span class="line">git checkout &lt;sha1-of-a-commit&gt; &lt;/path/to/your/file&gt;  撤销单个文件到某次提交</span><br><span class="line">$ git status -sb   查看修改显示</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换远程分支"><a href="#切换远程分支" class="headerlink" title="切换远程分支"></a>切换远程分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 本地分支名 origin/远程分支名</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xingbili.github.io/2021/06/19/git-%E5%A4%87%E5%BF%98/" data-id="ckq3xs10m0001msttgr781lb7" data-title="git 备忘" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-NPM常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/19/NPM%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
@@ -99,11 +176,31 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>1、npm install  xxx -g 全局安装  不带 -g 局部安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明：全局安装的包可以在命令行使用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">局部安装的可以通过 require 来引用模块</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果需要两者功能则需要两种方式都安装一遍，或者npm      link</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install xxx -f 强制重新安装</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-D （--save-dev） 只安装到 devDependence</span><br></pre></td></tr></table></figure>
+
+<p>2、npm config set proxy host or ipaddress 设置代理</p>
+<p>3、npm list -g  <strong>查看全局安装模块</strong></p>
+<p>4、npm list  xxx 查看 xxx 的模块的版本号</p>
+<p>5、npm uninstall xxx <strong>卸载模块</strong></p>
+<p>6、npm ls 查看 node_modules 目录下的包</p>
+<p>7、 npm update xxx <strong>更新模块</strong></p>
+<p>8、npm search xxx <strong>搜索模块</strong></p>
+<p>9、npm cache clear <strong>清空npm本地缓存</strong></p>
+<p>10、npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a> 使用淘宝镜像</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xingbili.github.io/2021/06/19/NPM%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="ckq38lm440000g4ttfn35f6kn" data-title="NPM常用命令" class="article-share-link">分享</a>
+      <a data-url="https://xingbili.github.io/2021/06/19/NPM%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="ckq3xs10f0000mstth1my8a7f" data-title="NPM常用命令" class="article-share-link">分享</a>
       
       
       
@@ -165,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xingbili.github.io/2021/06/19/kafka%E5%9F%BA%E6%9C%AC%E6%90%AD%E5%BB%BA/" data-id="ckq38lm480001g4tt1zyl5psr" data-title="kafka基本搭建" class="article-share-link">分享</a>
+      <a data-url="https://xingbili.github.io/2021/06/19/kafka%E5%9F%BA%E6%9C%AC%E6%90%AD%E5%BB%BA/" data-id="ckq3xs10n0002mstt6nje3m5q" data-title="kafka基本搭建" class="article-share-link">分享</a>
       
       
       
@@ -231,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xingbili.github.io/2021/06/19/koa%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8/" data-id="ckq38lm490002g4ttaqkefuh6" data-title="koa快速使用" class="article-share-link">分享</a>
+      <a data-url="https://xingbili.github.io/2021/06/19/koa%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8/" data-id="ckq3xs10o0004mstta0qzdo0z" data-title="koa快速使用" class="article-share-link">分享</a>
       
       
       
@@ -278,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xingbili.github.io/2021/06/19/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%9F%A5%E8%AF%86/" data-id="ckq38lm4a0003g4tt67ms7jb7" data-title="前端小知识" class="article-share-link">分享</a>
+      <a data-url="https://xingbili.github.io/2021/06/19/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%9F%A5%E8%AF%86/" data-id="ckq3xs10o0003msttcpebbmk0" data-title="前端小知识" class="article-share-link">分享</a>
       
       
       
@@ -319,6 +416,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/06/19/git-%E5%A4%87%E5%BF%98/">git 备忘</a>
+          </li>
         
           <li>
             <a href="/2021/06/19/NPM%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">NPM常用命令</a>
