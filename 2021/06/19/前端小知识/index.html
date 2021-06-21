@@ -198,15 +198,44 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h3 id="css一行文本超出…"><a href="#css一行文本超出…" class="headerlink" title="css一行文本超出…"></a>css一行文本超出…</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>:hidden;</span><br><span class="line"><span class="attribute">text-overflow</span>:ellipsis;</span><br><span class="line"><span class="attribute">white-space</span>:nowrap;</span><br></pre></td></tr></table></figure>
-
-<h3 id="多行文本超出显示…"><a href="#多行文本超出显示…" class="headerlink" title="多行文本超出显示…"></a>多行文本超出显示…</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">display</span>: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: <span class="number">3</span>;</span><br><span class="line"><span class="attribute">overflow</span>: hidden;</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改滚动条样式"><a href="#修改滚动条样式" class="headerlink" title="修改滚动条样式"></a>修改滚动条样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">隐藏滚动条</span><br><span class="line"><span class="selector-tag">div</span>::-webkit-scrollbar &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用css写出一个三角形角标"><a href="#使用css写出一个三角形角标" class="headerlink" title="使用css写出一个三角形角标"></a>使用css写出一个三角形角标</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid #transparent;</span><br><span class="line">    <span class="attribute">border-top-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line">//父级控制子级剧中</span><br><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	<h3 id="css一行文本超出…"><a href="#css一行文本超出…" class="headerlink" title="css一行文本超出…"></a>css一行文本超出…</h3><pre><code class="css">overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+</code></pre>
+<h3 id="多行文本超出显示…"><a href="#多行文本超出显示…" class="headerlink" title="多行文本超出显示…"></a>多行文本超出显示…</h3><pre><code class="css">display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+</code></pre>
+<h3 id="修改滚动条样式"><a href="#修改滚动条样式" class="headerlink" title="修改滚动条样式"></a>修改滚动条样式</h3><pre><code class="css">隐藏滚动条
+div::-webkit-scrollbar &#123;
+    display: none;
+&#125;
+</code></pre>
+<h3 id="使用css写出一个三角形角标"><a href="#使用css写出一个三角形角标" class="headerlink" title="使用css写出一个三角形角标"></a>使用css写出一个三角形角标</h3><pre><code class="css">div &#123;
+    width: 0;
+    height: 0;
+    border: 5px solid #transparent;
+    border-top-color: red;
+&#125;
+</code></pre>
+<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><pre><code class="css">div &#123;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+&#125;
+//父级控制子级剧中
+.parent &#123;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+&#125;
+</code></pre>
 
 </div>
 

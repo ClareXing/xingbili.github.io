@@ -200,31 +200,45 @@ var _hmt = _hmt || [];
 <div id="article-content">
 	<h2 id="KOA2"><a href="#KOA2" class="headerlink" title="KOA2"></a>KOA2</h2><p>单独使用koa插件</p>
 <p>初始化项目</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
-
+<pre><code>npm init
+</code></pre>
 <p>安装koa2 </p>
 <p><code>npm install koa --save</code></p>
 <h3 id="koa2环境搭建"><a href="#koa2环境搭建" class="headerlink" title="koa2环境搭建"></a>koa2环境搭建</h3><p>全局安装脚手架</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g koa-generator</span><br></pre></td></tr></table></figure>
-
+<pre><code>npm install -g koa-generator
+</code></pre>
 <p>查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">koa2 --version</span><br></pre></td></tr></table></figure>
-
+<pre><code>koa2 --version
+</code></pre>
 <p>创建项目</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">koa2 &#x27;项目名称&#x27;</span><br></pre></td></tr></table></figure>
-
+<pre><code>koa2 &#39;项目名称&#39;
+</code></pre>
 <p>启动项目</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-
+<pre><code>npm run dev
+</code></pre>
 <p>访问</p>
 <p>localhost：3000</p>
 <p>koa 路由创建方式</p>
 <p>创建路由</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">&#x27;koa-router&#x27;</span>)();</span><br><span class="line"><span class="comment">//设置前缀</span></span><br><span class="line">router.prefix(<span class="string">&#x27;/api&#x27;</span>)</span><br><span class="line">router.get(<span class="string">&#x27;/list&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ctx,next</span>)</span>&#123;</span><br><span class="line">  ctx.body = <span class="string">&#x27;api list&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">&#x27;create&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ctx,next</span>)</span>&#123;</span><br><span class="line">  ctx.body =<span class="string">&#x27;api create&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router</span><br><span class="line"></span><br><span class="line">app.js 中引入路由</span><br><span class="line"><span class="keyword">const</span> comments = <span class="built_in">require</span>(<span class="string">&#x27;./router/comments&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">const router = require(&#39;koa-router&#39;)();
+//设置前缀
+router.prefix(&#39;/api&#39;)
+router.get(&#39;/list&#39;,function(ctx,next)&#123;
+  ctx.body = &#39;api list&#39;
+&#125;)
 
+router.post(&#39;create&#39;,function(ctx,next)&#123;
+  ctx.body =&#39;api create&#39;
+&#125;)
+
+module.exports = router
+
+app.js 中引入路由
+const comments = require(&#39;./router/comments&#39;)
+</code></pre>
 <p>服务器自动重新部署：nodemon</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i nodemon -g</span><br></pre></td></tr></table></figure>
-
+<pre><code>npm i nodemon -g
+</code></pre>
 <p>启动 nodemon 代替 node</p>
 
 </div>

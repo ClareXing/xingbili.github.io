@@ -201,27 +201,29 @@ var _hmt = _hmt || [];
 	<p>安装</p>
 <p>下载安装包</p>
 <p><a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/apache/kafka/2.8.0/kafka_2.13-2.8.0.tgz"><strong>https://mirrors.bfsu.edu.cn/apache/kafka/2.8.0/kafka_2.13-2.8.0.tgz</strong></a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tar -xzf kafka_2.13-2.8.0.tgz</span><br><span class="line">$ cd kafka_2.13-2.8.0</span><br></pre></td></tr></table></figure>
-
+<pre><code>$ tar -xzf kafka_2.13-2.8.0.tgz
+$ cd kafka_2.13-2.8.0
+</code></pre>
 <p>docker 安装</p>
 <p>命令</p>
 <p><strong>启动zookeeper</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/zookeeper-server-start.sh config/zookeeper.properties</span><br></pre></td></tr></table></figure>
-
+<pre><code>bin/zookeeper-server-start.sh config/zookeeper.properties
+</code></pre>
 <p><strong>启动kafka</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-server-start.sh config/server.properties</span><br></pre></td></tr></table></figure>
-
+<pre><code>bin/kafka-server-start.sh config/server.properties
+</code></pre>
 <p><strong>创建topic</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092</span><br></pre></td></tr></table></figure>
-
+<pre><code>bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+</code></pre>
 <p><strong>查看创建的topic</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092</span><br></pre></td></tr></table></figure>
-
+<pre><code>bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+</code></pre>
 <p><strong>发送消息</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092</span><br></pre></td></tr></table></figure>
-
+<pre><code>bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+</code></pre>
 <p><strong>查看消息</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-console-consumer.sh --topic ALLINONE_SCHEDULE_CREATE --from-beginning --bootstrap-server localhost:909</span><br></pre></td></tr></table></figure>
+<pre><code>bin/kafka-console-consumer.sh --topic ALLINONE_SCHEDULE_CREATE --from-beginning --bootstrap-server localhost:909
+</code></pre>
 
 </div>
 
